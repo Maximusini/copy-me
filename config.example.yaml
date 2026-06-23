@@ -1,0 +1,6 @@
+user_id: "<your user_id like user000000000>"
+username: "<your username>"
+window_size: 5
+telegram_export_path: "./data/result.json"
+output_dataset_path: "./data/dataset.jsonl"
+system_prompt: "<your_system_prompt>"
