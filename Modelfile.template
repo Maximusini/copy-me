@@ -1,0 +1,22 @@
+FROM ./qwen_q4_k_m.gguf
+
+PARAMETER temperature 0.40
+PARAMETER top_p 0.90
+PARAMETER num_ctx 2048
+PARAMETER num_predict 150
+PARAMETER repeat_penalty 1.30
+PARAMETER presence_penalty 1.50
+PARAMETER frequency_penalty 1.00
+PARAMETER repeat_last_n 128
+
+PARAMETER stop "<|im_start|>"
+PARAMETER stop "<|im_end|>"
+
+TEMPLATE """{{ if .System }}<|im_start|>system
+{{ .System }}<|im_end|>
+{{ end }}{{ if .Prompt }}<|im_start|>user
+{{ .Prompt }}<|im_end|>
+{{ end }}<|im_start|>assistant
+"""
+
+SYSTEM "<your system prompt>"
