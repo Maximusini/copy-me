@@ -12,3 +12,5 @@ wheels/
 /data
 /convert
 config.yaml
+Modelfile
+*.gguf
